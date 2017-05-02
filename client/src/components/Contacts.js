@@ -22,7 +22,7 @@ class Contacts extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    comments: state.comments
+    contacts: state.contacts
   };
 };
 
