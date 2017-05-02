@@ -9,7 +9,7 @@ class Contacts extends Component {
 
     return (
       <div>
-        <PageHeader>Contact List</PageHeader>
+        <PageHeader className="header1">Contact List <small>Evolent Users</small></PageHeader>
         <div className="contacts">
             {this.props.contacts.map(contact =>
             <h2>{contact.first_name} {contact.last_name}</h2>

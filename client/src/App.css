@@ -1,5 +1,13 @@
 .App {
-  text-align: center;
+  text-align: left;
+}
+
+.header1 {
+  padding-left: 1%;
+}
+
+.contacts {
+  padding-left: 1%;
 }
 
 .App-logo {
