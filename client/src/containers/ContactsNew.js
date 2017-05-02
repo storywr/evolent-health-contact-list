@@ -25,7 +25,8 @@ class ContactsNew extends Component {
     console.log(this.state);
     this.props.actions.addContact(this.state);
     this.props.actions.fetchContacts();
-    browserHistory.push(`/`);
+    browserHistory.push(`/contacts`);
+    this.props.actions.fetchContacts();
   }
 
   handleOnFirstNameChange(event) {
