@@ -9,6 +9,8 @@ import App from './App'
 import Contacts from './components/Contacts';
 import ContactsNew from './containers/ContactsNew';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 
 const middleWare = [thunk];
 
