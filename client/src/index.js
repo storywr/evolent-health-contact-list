@@ -6,6 +6,8 @@ import thunk from 'redux-thunk'
 import reducers from './reducers'
 import { Router, Route, browserHistory } from 'react-router';
 import App from './App'
+import Contacts from './components/Contacts';
+import ContactsNew from './containers/ContactsNew';
 import './index.css';
 
 const middleWare = [thunk];
