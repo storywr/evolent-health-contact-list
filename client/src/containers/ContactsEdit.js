@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateContact } from '../actions/contacts';
+import { fetchContacts } from '../actions/contacts';
 import { browserHistory } from 'react-router';
 import { PageHeader } from 'react-bootstrap';
 import '../App.css'
@@ -24,7 +25,9 @@ class ContactsEdit extends Component {
     event.preventDefault();
     console.log(this.state);
     this.props.actions.updateContact(this.state);
+    this.props.actions.fetchContacts();
     browserHistory.push(`/contacts`);
+    this.props.actions.fetchContacts();
   }
 
   handleOnFirstNameChange(event) {
@@ -100,7 +103,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ updateContact }, dispatch)
+    actions: bindActionCreators({ updateContact, fetchContacts }, dispatch)
   };
 };
 

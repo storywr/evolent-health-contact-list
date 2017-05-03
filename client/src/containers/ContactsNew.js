@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addContact } from '../actions/contacts';
+import { fetchContacts } from '../actions/contacts';
 import { browserHistory } from 'react-router';
 import { PageHeader } from 'react-bootstrap';
 import '../App.css'
@@ -23,7 +24,9 @@ class ContactsNew extends Component {
     event.preventDefault();
     console.log(this.state);
     this.props.actions.addContact(this.state);
+    this.props.actions.fetchContacts();
     browserHistory.push(`/contacts`);
+    this.props.actions.fetchContacts();
   }
 
   handleOnFirstNameChange(event) {
@@ -93,7 +96,7 @@ class ContactsNew extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ addContact }, dispatch)
+    actions: bindActionCreators({ addContact, fetchContacts }, dispatch)
   };
 };
 
