@@ -16,7 +16,7 @@ class ContactsEdit extends Component {
       last_name: props.contact.last_name,
       email: props.contact.email,
       phone_number: props.contact.phone_number,
-      status: props.contact.status,
+      status: '',
       id: props.contact.id
     };
   }
@@ -56,7 +56,7 @@ class ContactsEdit extends Component {
 
   handleOnStatusChange(event) {
     this.setState({
-      status: event.target.value
+      status: event.target.checked
     });
   }
 
@@ -81,7 +81,7 @@ class ContactsEdit extends Component {
             type="text"
             placeholder={this.props.contact.phone_number}
             onChange={(event) => this.handleOnPhoneNumberChange(event)} /><br></br><br></br>
-          <p>Active User? &nbsp;
+          <p>Check if Active User &nbsp;
           <input
             type="checkbox"
             onChange={(event) => this.handleOnStatusChange(event)} /><br></br><br></br>

@@ -28,12 +28,22 @@ class ContactShow extends Component {
   render() {
     const contact = this.state.contact;
 
+    function checkActive(person) {
+      if (person.status === true) {
+        return "Active"
+      } else {
+        return "Inactive"
+      }
+    }
+
+    const activeStatus = checkActive(this.state.contact)
+
     return (
       <div>
         <PageHeader className="header1">{contact.first_name} {contact.last_name} <small>{contact.email}</small></PageHeader>
         <div className="contacts">
           <h3>Phone Number: {contact.phone_number}</h3>
-          <h3>Status: {contact.status}</h3><br></br>
+          <h3>Status: {activeStatus}</h3><br></br>
           <button className="deleteButton" onClick={(event) => this.handleDeleteOnClick(event)} type="button">Delete Contact</button>
           <Link to={`/contacts/${contact.id}/edit`}><h4>Edit Contact</h4></Link>
         </div>

@@ -12,7 +12,7 @@ class Contacts extends Component {
         <PageHeader className="header1">Contact List <small>Evolent Users</small></PageHeader>
         <div className="contacts">
             {this.props.contacts.map(contact =>
-            <Link to={`/contacts/${contact.id}`}><h2>{contact.first_name} {contact.last_name}</h2></Link>
+            <Link to={`/contacts/${contact.id}`}><h4>{contact.first_name} {contact.last_name}</h4></Link>
             )}
         </div>
       </div>

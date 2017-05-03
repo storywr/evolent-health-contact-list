@@ -16,7 +16,7 @@ class ContactsNew extends Component {
       last_name: '',
       email: '',
       phone_number: '',
-      status: true
+      status: ''
     };
   }
 
@@ -55,7 +55,7 @@ class ContactsNew extends Component {
 
   handleOnStatusChange(event) {
     this.setState({
-      status: event.target.value
+      status: event.target.checked
     });
   }
 
@@ -80,7 +80,7 @@ class ContactsNew extends Component {
             type="text"
             placeholder="Phone Number"
             onChange={(event) => this.handleOnPhoneNumberChange(event)} /><br></br><br></br>
-          <p>Active User? &nbsp;
+          <p>Check if Active User &nbsp;
           <input
             type="checkbox"
             onChange={(event) => this.handleOnStatusChange(event)} /><br></br><br></br>
