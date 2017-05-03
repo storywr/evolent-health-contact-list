@@ -24,7 +24,8 @@ class ContactShow extends Component {
         <PageHeader className="header1">{contact.first_name} {contact.last_name} <small>{contact.email}</small></PageHeader>
         <div className="contacts">
           <h3>Phone Number: {contact.phone_number}</h3>
-          <h3>Status: {contact.status}</h3>
+          <h3>Status: {contact.status}</h3><br></br>
+          <Link to={`/contacts/${contact.id}/edit`}><h4>Edit</h4></Link>
         </div>
       </div>
     );

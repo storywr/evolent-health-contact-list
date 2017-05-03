@@ -6,10 +6,6 @@ class Api::ContactsController < ApplicationController
     json: @contacts
   end
 
-  def create
-    @contact = Contact.create(contact_params)
-  end
-
   def update
     if contact_params[:id] != nil
       @contact = Contact.find(contact_params[:id])

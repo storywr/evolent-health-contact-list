@@ -9,6 +9,7 @@ import App from './App'
 import Contacts from './components/Contacts';
 import ContactsNew from './containers/ContactsNew';
 import ContactShow from './components/ContactShow';
+import ContactsEdit from './containers/ContactsEdit';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -28,6 +29,7 @@ ReactDOM.render(
         <Route path="/contacts" component={Contacts} />
         <Route path="/contacts/new" component={ContactsNew} />
         <Route path="/contacts/:id" component={ContactShow} />
+        <Route path="/contacts/:id/edit" component={ContactsEdit} />
       </Route>
     </Router>
   </Provider>,
