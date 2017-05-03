@@ -34,8 +34,8 @@ class ContactShow extends Component {
         <div className="contacts">
           <h3>Phone Number: {contact.phone_number}</h3>
           <h3>Status: {contact.status}</h3><br></br>
-          <button className="deleteButton" onClick={(event) => this.handleDeleteOnClick(event)} type="button">+</button>
-          <Link to={`/contacts/${contact.id}/edit`}><h4>Edit</h4></Link>
+          <button className="deleteButton" onClick={(event) => this.handleDeleteOnClick(event)} type="button">Delete Contact</button>
+          <Link to={`/contacts/${contact.id}/edit`}><h4>Edit Contact</h4></Link>
         </div>
       </div>
     );

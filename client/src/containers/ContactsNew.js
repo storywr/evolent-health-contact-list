@@ -80,7 +80,7 @@ class ContactsNew extends Component {
             type="text"
             placeholder="Phone Number"
             onChange={(event) => this.handleOnPhoneNumberChange(event)} /><br></br><br></br>
-          <p>Check if Active &nbsp;
+          <p>Active User? &nbsp;
           <input
             type="checkbox"
             onChange={(event) => this.handleOnStatusChange(event)} /><br></br><br></br>
