@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { PageHeader } from 'react-bootstrap';
+import { fetchContacts } from  '../actions/contacts.js'
 
 class Contacts extends Component {
+
+  componentDidMount() {
+    this.props.actions.fetchContacts();
+  }
 
   render() {
 
@@ -26,4 +32,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Contacts);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators({ fetchContacts }, dispatch)
+  };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contacts);
