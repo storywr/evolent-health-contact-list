@@ -36,7 +36,7 @@ class ContactShow extends Component {
       }
     }
 
-    const activeStatus = checkActive(this.state.contact)
+    const activeStatus = checkActive(contact)
 
     return (
       <div>

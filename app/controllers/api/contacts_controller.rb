@@ -1,23 +1,23 @@
 class Api::ContactsController < ApplicationController
 
   def index
-    @contacts = Contact.all
+    contacts = Contact.all
     render status: 200,
-    json: @contacts
+    json: contacts
+  end
+
+  def create
+    contact = Contact.create(contact_params)
   end
 
   def update
-    if contact_params[:id] != nil
-      @contact = Contact.find(contact_params[:id])
-      @contact.update(contact_params)
-    else
-      @contact = Contact.create(contact_params)
-    end
+    contact = Contact.find(contact_params[:id])
+    contact.update(contact_params)
   end
 
   def destroy
-    @contact = Contact.find(contact_params[:id])
-    @contact.destroy
+    contact = Contact.find(contact_params[:id])
+    contact.destroy
   end
 
   private
