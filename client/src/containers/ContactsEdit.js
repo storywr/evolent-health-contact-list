@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateContact } from '../actions/contacts';
-import { fetchContacts } from '../actions/contacts';
 import { browserHistory } from 'react-router';
 import { PageHeader } from 'react-bootstrap';
 import '../App.css'
@@ -101,7 +100,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ updateContact, fetchContacts }, dispatch)
+    actions: bindActionCreators({ updateContact }, dispatch)
   };
 };
 

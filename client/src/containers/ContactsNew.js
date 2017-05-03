@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addContact } from '../actions/contacts';
-import { fetchContacts } from '../actions/contacts';
 import { browserHistory } from 'react-router';
 import { PageHeader } from 'react-bootstrap';
 import '../App.css'
@@ -94,7 +93,7 @@ class ContactsNew extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({ addContact, fetchContacts }, dispatch)
+    actions: bindActionCreators({ addContact }, dispatch)
   };
 };
 
