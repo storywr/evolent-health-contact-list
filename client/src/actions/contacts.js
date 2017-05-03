@@ -40,3 +40,20 @@ export function updateContact(contact) {
       .catch(console.log)
   }
 }
+
+export function deleteContact(contact) {
+  const request = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ contact })
+  };
+
+  return dispatch => {
+    return fetch('/api/contacts', request)
+      .then(response => response.json())
+      .then(contact => dispatch({ type: 'DELETE_CONTACT', contact }))
+      .catch(console.log)
+  }
+}

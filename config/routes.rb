@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
     post '/contacts/', to: 'contacts#update'
-    resources :contacts, only: [:index, :update]
+    delete '/contacts/', to: 'contacts#destroy'
+    resources :contacts, only: [:index, :update, :destroy]
   end
 
 end

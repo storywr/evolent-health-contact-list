@@ -13,6 +13,9 @@ export default function contactsReducer(state = [], action) {
     case 'ADD_CONTACT':
       const contact = Object.assign({}, action.contact, { id: state.length + 1} );
       return [ ...state, contact ];
+    case 'DELETE_CONTACT':
+      const contacts = state.contacts.filter(contact => contact.id !== action.id);
+      return Object.assign({}, state, { contacts });
     default:
       return state;
   }
